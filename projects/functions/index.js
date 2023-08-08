@@ -1,5 +1,7 @@
 /* ДЗ 1 - Функции */
 
+import { resourceLimits } from "worker_threads";
+
 /*
  Задание 1:
 
@@ -12,7 +14,9 @@
 
  Другими словами: функция должна возвращать в неизменном виде то, что поступает ей на вход
  */
-function returnFirstArgument() {}
+function returnFirstArgument(arg) {
+  return arg;
+}
 
 /*
  Задание 2:
@@ -28,7 +32,9 @@ function returnFirstArgument() {}
  Пример:
    sumWithDefaults(10) вернет 110
  */
-function sumWithDefaults() {}
+function sumWithDefaults(arg1, arg2 = 100) {
+  return arg1+arg2;
+}
 
 /*
  Задание 3:
@@ -38,7 +44,9 @@ function sumWithDefaults() {}
  Пример:
    returnFnResult(() => 'привет') вернет 'привет'
  */
-function returnFnResult() {}
+function returnFnResult(a) {
+  return a();
+}
 
 /*
  Задание 4:
@@ -53,7 +61,9 @@ function returnFnResult() {}
    console.log(f()); // выведет 12
    console.log(f()); // выведет 13
  */
-function returnCounter() {}
+function returnCounter(i=0) {
+  return () => ++i;
+}
 
 /*
  Задание 5 *:
@@ -64,7 +74,9 @@ function returnCounter() {}
  Пример:
    returnArgumentsArray(1, 2, 3) вернет [1, 2, 3]
  */
-function returnArgumentsArray() {}
+function returnArgumentsArray(...args) {
+  return args;
+}
 
 export {
   returnFirstArgument,
